@@ -1,0 +1,157 @@
+// C:\DataFlex Projects\TutorialWS\AppSrc\Order.wo
+// Order
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+Use cWebEdit.pkg
+Use cWebGrid.pkg
+Use cWebColumn.pkg
+
+Use cWebSuggestionForm.pkg
+Use cWebParentCombo.pkg
+
+Use cProductDataDictionary.dd
+Use cOrderDataDictionary.dd
+Use cOrder_DetailDataDictionary.dd
+
+Object oOrder is a cWebView
+  Set piColumnCount to 12
+  Set psCaption to "Order"
+  Set piWidth to 700
+
+  Object oProduct_DD is a cProductDataDictionary
+    Procedure OnPostFind Integer eMessage Boolean bFound
+      Forward Send OnPostFind eMessage bFound
+      
+      Boolean bSynching
+      
+      Get AppSynching to bSynching
+      
+      If (not(bSynching)) Begin
+        Send setPriceDefault of oOrder_Detail_DD Product.Price  
+      End
+      
+    End_Procedure
+  End_Object 
+
+  Object oOrder_DD is a cOrderDataDictionary
+    // this lets you save a new parent DD from within child DD
+    Set Allow_Foreign_New_Save_State to True
+  End_Object 
+
+  Object oOrder_Detail_DD is a cOrder_DetailDataDictionary
+    Set DDO_Server To oOrder_DD
+    Set DDO_Server To oProduct_DD
+    Set Constrain_File to Order.File_Number
+    
+    Procedure setPriceDefault Number nNum
+      Set Field_Changed_Value Field Order_Detail.UnitPrice to nNum    //
+      Set Field_Changed_Value Field Order_Detail.Amount to 1
+      
+      Send AdjustDisplayTotal
+      
+    End_Procedure
+    
+  End_Object 
+
+  Set Main_DD To oOrder_DD
+  Set Server  To oOrder_DD
+
+
+  Object oWebMainPanel is a cWebPanel
+    Set piColumnCount to 12
+
+    Object oOrderOrderId is a cWebForm
+      Entry_Item Order.OrderId
+      Set piColumnSpan to 5
+      Set piColumnIndex to 0
+      Set psLabel to "OrderId:"
+      Set peLabelAlign to alignLeft
+    End_Object 
+
+    Object oOrderCustomer is a cWebSuggestionForm
+      Entry_Item Order.Customer
+      Set piColumnSpan to 12
+      Set piColumnIndex to 0
+      Set psLabel to "Customer:"
+      Set peLabelAlign to alignLeft
+      Set pbFullText to True
+    End_Object 
+
+    Object oOrderDate is a cWebDateForm
+      Entry_Item Order.Date
+      Set piColumnSpan to 5
+      Set piColumnIndex to 0
+      Set psLabel to "Date:"
+      Set peLabelAlign to alignLeft
+    End_Object 
+
+    Object oOrderPrice is a cWebForm
+      Entry_Item Order.Price
+      Set piColumnSpan to 5
+      Set piColumnIndex to 7
+      Set psLabel to "Balance:"
+      Set peLabelAlign to alignLeft
+    End_Object 
+
+    Object oOrderComment is a cWebEdit
+      Entry_Item Order.Comment
+      Set piColumnSpan to 12
+      Set piColumnIndex to 0
+      Set psLabel to "Comment:"
+      Set pbFillHeight to True
+      Set peLabelAlign to alignLeft
+    End_Object 
+
+    Object oDetailGrid is a cWebGrid
+      Set Server to oOrder_Detail_DD
+      Set piOrdering to 5
+      Set pbFillHeight to True
+      Set piColumnSpan to 12
+
+      Object oProductNumber is a cWebColumn
+        Entry_Item Product.Number
+        Set psCaption to "Product Number"
+        Set piWidth to 525
+      End_Object 
+
+      Object oProductName is a cWebColumn
+        Entry_Item Product.Name
+        Set psCaption to "Name"
+        Set piWidth to 525
+      End_Object 
+
+      Object oOrderPrice is a cWebColumn
+        Entry_Item Order_Detail.UnitPrice
+        Set psCaption to "Price"
+        Set piWidth to 147
+        
+        Set pbServerOnChange to True
+        
+        Procedure OnChange String sNewValue String sOldValue
+          Send AdjustDisplayTotal of oOrder_Detail_DD
+        End_Procedure
+      End_Object 
+
+      Object oOrder_DetailAmount is a cWebColumn
+        Entry_Item Order_Detail.Amount
+        Set psCaption to "Amount"
+        Set piWidth to 147
+        
+        Set pbServerOnChange to True
+        Procedure OnChange String sNewValue String sOldValue
+          Send AdjustDisplayTotal of oOrder_Detail_DD
+        End_Procedure
+      End_Object 
+
+      Object oOrder_DetailTotal is a cWebColumn
+        Entry_Item Order_Detail.Total
+        Set psCaption to "Total"
+        Set piWidth to 147
+      End_Object 
+    End_Object 
+  End_Object 
+
+End_Object 

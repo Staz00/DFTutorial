@@ -1,0 +1,48 @@
+Use DataDict.pkg
+
+Open Product
+Open PARAM
+Open Order_Detail
+
+Object oCategoryVT is a CodeValidationTable
+  Set Type_Value to "PRODCAT"
+End_Object
+
+Register_Object oProductWebLookup
+
+Class cProductDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to Product.File_Number
+
+      Set Add_Client_File to Order_Detail.File_Number
+
+      Set Add_System_File to PARAM.File_Number DD_Lock_On_All
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+      Set Field_Label_Long Field Product.ProductId to "ID"
+      Set Field_Auto_Increment Field Product.ProductId to File_Field PARAM.Product_ID
+
+      Set Field_Label_Long Field Product.Number to "Product Number"
+      Set Field_WebPrompt_Object Field Product.Number to oProductWebLookup
+
+      Set Field_Label_Long Field Product.Name to "Name"
+      Set Field_WebPrompt_Object Field Product.Name to oProductWebLookup
+
+      Set Field_Label_Long Field Product.EAN to "EAN"
+
+      Set Field_Value_Table Field Product.Category to oCategoryVT
+
+    End_Procedure
+
+End_Class
+
+#IFDEF Is$WebApp
+Use ProductWebLookup.wo
+#ELSE
+#ENDIF

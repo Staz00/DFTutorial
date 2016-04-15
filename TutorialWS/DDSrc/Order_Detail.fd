@@ -1,0 +1,8 @@
+#REPLACE FILE4 Order_Detail
+#REPLACE Order_Detail.Recnum |FN4,0
+#REPLACE Order_Detail.Order_Detail_Id |FN4,1
+#REPLACE Order_Detail.ProductId |FN4,2
+#REPLACE Order_Detail.Amount |FN4,3
+#REPLACE Order_Detail.Total |FN4,4
+#REPLACE Order_Detail.OrderId |FN4,5
+#REPLACE Order_Detail.UnitPrice |FN4,6

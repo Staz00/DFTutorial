@@ -1,0 +1,45 @@
+-----------------------------------------------------------------------------
+  DATE: 15/04/2016      TIME: 13:49                                  PAGE:  1
+  FILE DEFINITION FOR FILE: Product (# 1)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : DATAFLEX
+  FILE ROOT NAME            : Product
+  USER DISPLAY NAME         : Product
+  DATAFLEX FILE NAME        : Product
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 170       ( USED: 139 )
+  MAX NUMBER OF RECORDS     : 10000     ( USED: 2 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : FILE
+  HEADER INTEGRITY CHECKING : YES
+  TRANSACTION TYPE          : CLIENT ATOMIC
+  RECORD IDENTITY INDEX     : 0 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : 
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  ProductId        NUM   14.0     1  1   
+  2  Number           ASC     50     8  2   
+  3  Name             ASC     50    58  3   
+  4  EAN              ASC     20   108  4   
+  5  Price            NUM   14.0   128  5   
+  6  Category         NUM   10.0   135      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    ProductId       NO  NO       7      3       1     ON-LINE
+
+  2    Number          NO  NO       50     5       1     ON-LINE
+
+  3    Name            NO  NO       50     5       1     ON-LINE
+
+  4    EAN             NO  NO       27     4       2     ON-LINE
+       ProductId       NO  NO 
+
+  5    Price           NO  NO       14     3       2     ON-LINE
+       ProductId       NO  NO 
+

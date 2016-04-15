@@ -1,0 +1,1358 @@
+Compiling Program: C:\DataFlex Projects\TutorialWS\AppSrc\WebApp.src
+Memory Available: 2147483647
+1>Use AllWebAppClasses.pkg
+Using pre-compiled package ALLWEBAPPCLASSES.PKG
+Including file: AllWebAppClasses.pkd    (C:\Program Files\DataFlex 18.2\Pkg\AllWebAppClasses.pkd)
+28717>Use cWebMenuItemLoadView.pkg
+28717>
+28717>Object oApplication is a cApplication
+28719>End_Object
+28720>
+28720>Object oWebApp is a cWebApp
+28722>    Set psTheme to "Df_Web_Creme"
+28723>  Set psEncryptPassword to "Q&^W$z{~$HrFt.ncd&q1baJXzRW)femaK=*_uD-v"
+28724>  Set peLoginMode to lmLoginNone
+28725>
+28725>    Object oCommandbar is a cWebCommandBar                
+28727>        Object oMenuBar is a cWebMenuBar
+28729>            Object oFileMenu is a cWebMenuItem
+28731>                Set psCaption to C_$File
+28732>                
+28732>                Object oClearMenuItem is a cWebMenuClear
+28734>                End_Object  
+28735>                             
+28735>                Object oClearAllMenuItem is a cWebMenuClearAll
+28737>                End_Object  
+28738>                
+28738>                Object oPromptMenuItem is a cWebMenuPrompt
+28740>                    Set pbBeginGroup to True
+28741>                End_Object  
+28742>                               
+28742>                Object oFindMenuItem is a cWebMenuFind
+28744>                End_Object  
+28745>
+28745>                Object oNextMenuItem is a cWebMenuFindNext
+28747>                End_Object  
+28748>
+28748>                Object oPreviousMenuItem is a cWebMenuFindPrevious
+28750>                End_Object  
+28751>                
+28751>                Object oLastMenuItem is a cWebMenuFindLast
+28753>                End_Object                
+28754>                                
+28754>                Object oFirstMenuItem is a cWebMenuFindFirst
+28756>                End_Object  
+28757>                
+28757>                Object oSaveMenuItem is a cWebMenuSave
+28759>                    Set pbBeginGroup to True
+28760>                End_Object  
+28761>                
+28761>                Object oDeleteMenuItem is a cWebMenuDelete
+28763>                End_Object  
+28764>                
+28764>                Object oLoginMenuItem is a cWebMenuItem
+28766>                    Set psCaption to C_$LogIn
+28767>                    Set pbBeginGroup to True
+28768>                    Set psCSSClass to "WebLoginMenuItem"
+28769>
+28769>                    Procedure OnClick
+28772>                        Send RequestLogin to ghoWebSessionManager
+28773>                    End_Procedure
+28774>                    
+28774>                    Procedure OnLoad
+28777>                        Integer eLoginMode
+28777>                        Handle hoLogin
+28777>                        Get GetLoginView to hoLogin
+28778>                        Get peLoginMode to eLoginMode
+28779>                        WebSet pbRender to  (hoLogin and eLoginMode<>lmLoginNone)
+28780>                    End_Procedure  // OnLoad
+28781>                    
+28781>                End_Object  
+28782>
+28782>                Object oLogoutMenuItem is a cWebMenuItem
+28784>                    Set psCaption to C_$LogOut
+28785>                    Set psCSSClass to "WebLogoutMenuItem"
+28786>
+28786>                    Procedure OnClick
+28789>                        Send RequestLogOut of ghoWebSessionManager
+28790>                    End_Procedure
+28791>
+28791>                    Procedure OnLoad
+28794>                        Integer eLoginMode
+28794>                        Handle hoLogin
+28794>                        Get GetLoginView to hoLogin
+28795>                        Get peLoginMode to eLoginMode
+28796>                        WebSet pbRender to  (hoLogin and eLoginMode<>lmLoginNone)
+28797>                    End_Procedure
+28798>                End_Object  
+28799>            End_Object  
+28800>    
+28800>            Object oViewMenu is a cWebMenuItem
+28802>                Set psCaption to C_$View
+28803>
+28803>              Object oProductItem1 is a cWebMenuItemLoadView
+28805>                Set psCaption to "Product"
+28806>                Set psLoadViewOnClick to "oProduct"
+28807>              End_Object
+28808>
+28808>              Object oOrderItem1 is a cWebMenuItemLoadView
+28810>                Set psCaption to "Order"
+28811>                Set psLoadViewOnClick to "oOrder"
+28812>              End_Object
+28813>
+28813>              Object oOrderListItem1 is a cWebMenuItemLoadView
+28815>                Set psCaption to "OrderList"
+28816>                Set psLoadViewOnClick to "oOrderList"
+28817>              End_Object
+28818>            End_Object  
+28819>        End_Object  
+28820>        
+28820>        Object oFindToolBar is a cWebToolBar
+28822>            Object oFirstMenuItem is a cWebMenuFindFirst
+28824>            End_Object  
+28825>    
+28825>            Object oPreviousMenuItem is a cWebMenuFindPrevious
+28827>            End_Object  
+28828>
+28828>            Object oFindMenuItem is a cWebMenuFind
+28830>            End_Object  
+28831>
+28831>            Object oNextMenuItem is a cWebMenuFindNext
+28833>            End_Object  
+28834>            
+28834>            Object oLastMenuItem is a cWebMenuFindLast
+28836>            End_Object
+28837>                           
+28837>            Object oPromptMenuItem is a cWebMenuPrompt
+28839>            End_Object 
+28840>        End_Object
+28841>        
+28841>        Object oFileToolBar is a cWebToolBar
+28843>            Set pbShowCaption to True
+28844>            
+28844>            Object oClearMenuItem is a cWebMenuClear
+28846>            End_Object              
+28847>             
+28847>            Object oClearAllMenuItem is a cWebMenuClearAll
+28849>            End_Object   
+28850>                        
+28850>            Object oSaveMenuItem is a cWebMenuSave
+28852>            End_Object  
+28853>            
+28853>            Object oDeleteMenuItem is a cWebMenuDelete
+28855>            End_Object 
+28856>        End_Object
+28857>    End_Object
+28858>
+28858>    Use SessionManager.wo
+Including file: SessionManager.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\SessionManager.wo)
+28858>>>Use cWebSessionManagerStandard.pkg
+Including file: cWebSessionManagerStandard.pkg    (C:\Program Files\DataFlex 18.2\Pkg\cWebSessionManagerStandard.pkg)
+28858>>>>>Use cWebSessionManager.pkg
+28858>>>>>Use cWebAppSessionDataDictionary.dd
+Including file: cWebAppSessionDataDictionary.dd    (C:\Program Files\DataFlex 18.2\Pkg\cWebAppSessionDataDictionary.dd)
+28858>>>>>>>Use DataDict.pkg
+28858>>>>>>>
+28858>>>>>>>Open WebAppSession
+Including file: WebAppSession.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\WebAppSession.fd)
+28860>>>>>>>Open WebAppUser
+Including file: WebAppUser.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\WebAppUser.fd)
+28862>>>>>>>
+28862>>>>>>>Class cWebAppSessionDataDictionary is a DataDictionary
+28863>>>>>>>    
+28863>>>>>>>    Procedure Construct_Object
+28865>>>>>>>        Forward Send Construct_Object
+28867>>>>>>>        Set Main_File to WebAppSession.File_Number
+28868>>>>>>>
+28868>>>>>>>        Set Add_Server_File to WebAppUser.File_Number
+28869>>>>>>>
+28869>>>>>>>        Set ParentNullAllowed WebAppUser.File_Number to True
+28870>>>>>>>
+28870>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+28871>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+28872>>>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+28873>>>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+28874>>>>>>>
+28874>>>>>>>        Set Field_Option Field WebAppSession.Active DD_RETAIN to True
+28875>>>>>>>        Set Field_Checkbox_Values Field WebAppSession.Active to "Y" "N"
+28876>>>>>>>        Set Field_Error Field WebAppSession.Active to 500 "Invalid WebAppSession Active State"
+28877>>>>>>>
+28877>>>>>>>    End_Procedure
+28878>>>>>>>
+28878>>>>>>>    Procedure Creating
+28880>>>>>>>        DateTime dtCurrentDateTime
+28880>>>>>>>        
+28880>>>>>>>        Forward Send Creating
+28882>>>>>>>        
+28882>>>>>>>        //  Init usecounter
+28882>>>>>>>        Move 0 to WebAppSession.UseCount
+28883>>>>>>>        
+28883>>>>>>>        //  Set the creation and access time to the current time
+28883>>>>>>>        Move (CurrentDateTime()) to dtCurrentDateTime
+28884>>>>>>>    
+28884>>>>>>>        Get TimeToString dtCurrentDateTime to WebAppSession.CreateTime
+28885>>>>>>>        Get TimeToString dtCurrentDateTime to WebAppSession.LastAccessTime
+28886>>>>>>>        
+28886>>>>>>>        Move dtCurrentDateTime to WebAppSession.CreateDate
+28887>>>>>>>        Move dtCurrentDateTime to WebAppSession.LastAccessDate
+28888>>>>>>>    End_Procedure
+28889>>>>>>>    
+28889>>>>>>>    
+28889>>>>>>>    
+28889>>>>>>>    //
+28889>>>>>>>    //  Converts the given time to an string that can be saved in the database.
+28889>>>>>>>    //
+28889>>>>>>>    //  Params:
+28889>>>>>>>    //      dtTime  Time to convert
+28889>>>>>>>    //  Returns:
+28889>>>>>>>    //      String with "HH:MM:SS" format
+28889>>>>>>>    //
+28889>>>>>>>    Function TimeToString DateTime dtTime Returns String
+28891>>>>>>>        String sHours sMinutes sSeconds
+28891>>>>>>>        
+28891>>>>>>>        //  Extract parts
+28891>>>>>>>        Move (String(DateGetHour(dtTime))) to sHours
+28892>>>>>>>        Move (String(DateGetMinute(dtTime))) to sMinutes
+28893>>>>>>>        Move (String(DateGetSecond(dtTime))) to sSeconds
+28894>>>>>>>        
+28894>>>>>>>        //  Fill out with 0
+28894>>>>>>>        If (Length(sHours) = 1) Move ("0" + sHours) to sHours
+28897>>>>>>>        If (Length(sMinutes) = 1) Move ("0" + sMinutes) to sMinutes
+28900>>>>>>>        If (Length(sSeconds) = 1) Move ("0" + sSeconds) to sSeconds
+28903>>>>>>>        
+28903>>>>>>>        Function_Return (sHours + ":" + sMinutes + ":" + sSeconds)
+28904>>>>>>>    End_Function
+28905>>>>>>>    
+28905>>>>>>>    //
+28905>>>>>>>    //  Sets the time of the datetime variable to the time in the string.
+28905>>>>>>>    //
+28905>>>>>>>    //  Params:
+28905>>>>>>>    //      dtTime  Datetime variable to add time to
+28905>>>>>>>    //      sTimeString String with time in the format "HH:MM:SS"
+28905>>>>>>>    //  Returns:
+28905>>>>>>>    //      dtDateTime with the loaded time
+28905>>>>>>>    //
+28905>>>>>>>    Function StringToTime DateTime dtTime String sTimeString Returns DateTime
+28907>>>>>>>        String sHours sMinutes sSeconds
+28907>>>>>>>        
+28907>>>>>>>        //  Extract parts
+28907>>>>>>>        Move (Mid(sTimeString, 2, 1)) to sHours
+28908>>>>>>>        Move (Mid(sTimeString, 2, 4)) to sMinutes
+28909>>>>>>>        Move (Mid(sTimeString, 2, 7)) to sSeconds
+28910>>>>>>>        
+28910>>>>>>>        //  Set to DateTime
+28910>>>>>>>        Move (DateSetHour(dtTime, (Integer(sHours)))) to dtTime
+28911>>>>>>>        Move (DateSetMinute(dtTime, (Integer(sMinutes)))) to dtTime
+28912>>>>>>>        Move (DateSetSecond(dtTime, (Integer(sSeconds)))) to dtTime
+28913>>>>>>>        
+28913>>>>>>>        Function_Return dtTime
+28914>>>>>>>    End_Function
+28915>>>>>>>
+28915>>>>>>>End_Class
+28916>>>>>Use cWebAppUserDataDictionary.dd
+Including file: cWebAppUserDataDictionary.dd    (C:\Program Files\DataFlex 18.2\Pkg\cWebAppUserDataDictionary.dd)
+28916>>>>>>>Use DataDict.pkg
+28916>>>>>>>Open WebAppUser
+28918>>>>>>>Open WebAppSession
+28920>>>>>>>
+28920>>>>>>>Class cWebAppUserDataDictionary is a DataDictionary
+28921>>>>>>>    
+28921>>>>>>>    Procedure Construct_Object
+28923>>>>>>>        Forward Send Construct_Object
+28925>>>>>>>        Set Main_File to WebAppUser.File_Number
+28926>>>>>>>
+28926>>>>>>>        Set Add_Client_File to WebAppSession.File_Number
+28927>>>>>>>
+28927>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+28928>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+28929>>>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+28930>>>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+28931>>>>>>>    End_Procedure
+28932>>>>>>>
+28932>>>>>>>End_Class
+28933>>>>>
+28933>>>>>Class cWebSessionManagerStandard is a cWebSessionManager
+28934>>>>>    
+28934>>>>>    Procedure Construct_Object
+28936>>>>>        Handle hoUserDD hoSessionDD
+28936>>>>>        
+28936>>>>>        Forward Send Construct_Object
+28938>>>>>        
+28938>>>>>        Property Handle phoUserDD 0      // Handle to the WebAppUser DDO
+28939>>>>>        Property Handle phoSessionDD 0   // Handle to the WebAppSession DDO        
+28940>>>>>        
+28940>>>>>        Get Create (RefClass(cWebAppUserDataDictionary)) to hoUserDD
+28941>>>>>        Get Create (RefClass(cWebAppSessionDataDictionary)) to hoSessionDD
+28942>>>>>        Set DDO_Server of hoSessionDD to hoUserDD
+28943>>>>>
+28943>>>>>        Set phoUserDD to hoUserDD
+28944>>>>>        Set phoSessionDD to hoSessionDD
+28945>>>>>        Property Boolean pbCreatingNewSession False
+28946>>>>>        Property Integer piSessionTimeout 480        
+28947>>>>>        Property String psLoginName
+28948>>>>>        Property String psUserName ""
+28949>>>>>        Property Integer piUserRights 0
+28950>>>>>    End_Procedure
+28951>>>>>    
+28951>>>>>    Function CreateSession String sRemoteAddress Returns String
+28953>>>>>        String sSessionKey
+28953>>>>>        Integer iErr
+28953>>>>>        Boolean bLogWebSession
+28953>>>>>        Handle hoSessionDD       
+28953>>>>>        Get phoSessionDD to hoSessionDD
+28954>>>>>        
+28954>>>>>        //  Get session key
+28954>>>>>        Forward Get CreateSession sRemoteAddress to sSessionKey
+28956>>>>>        
+28956>>>>>        Get pbLogWebSession to bLogWebSession
+28957>>>>>        If not bLogWebSession Begin
+28959>>>>>            Function_Return sSessionKey        
+28960>>>>>        End
+28960>>>>>>
+28960>>>>>
+28960>>>>>        //  Store session
+28960>>>>>        Send Clear of hoSessionDD
+28961>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.SessionKey to sSessionKey
+28962>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.RemoteAddress to sRemoteAddress
+28963>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.Active to "Y"
+28964>>>>>        Get Request_Validate of hoSessionDD to iErr
+28965>>>>>        If (iErr) Begin
+28967>>>>>            // this should not happen. If it does its a programming error
+28967>>>>>            Error DFERR_PROGRAM C_$WebAppSesionValidateFailed
+28968>>>>>>
+28968>>>>>            Function_Return ""
+28969>>>>>        End
+28969>>>>>>
+28969>>>>>        Send Request_Save of hoSessionDD
+28970>>>>>       
+28970>>>>>        Function_Return sSessionKey        
+28971>>>>>    End_Function
+28972>>>>>    
+28972>>>>>    
+28972>>>>>    Function ValidateSession String sSessionKey Returns Boolean
+28974>>>>>        DateTime dtLastAccess dtCurrent
+28974>>>>>        TimeSpan tsDiff
+28974>>>>>        Integer iErr iSessionTimeout iSpanMinutes
+28974>>>>>        Boolean bResult bCreatingNewSession
+28974>>>>>        Boolean bLogWebSession 
+28974>>>>>        Integer eLoginMode
+28974>>>>>        String sTime
+28974>>>>>        Handle hoSessionDD hoUserDD       
+28974>>>>>        
+28974>>>>>        Get phoSessionDD to hoSessionDD
+28975>>>>>        Get phoUserDD to hoUserDD
+28976>>>>>        
+28976>>>>>        Get pbLogWebSession to bLogWebSession
+28977>>>>>        Get peLoginMode to eLoginMode
+28978>>>>>        
+28978>>>>>        // for this object, you can only disable logging if login completely is disabled
+28978>>>>>        If (not(bLogWebSession) and (eLoginMode<>lmLoginNone)) Begin
+28980>>>>>            Error DFERR_PROGRAM C_$WebSessionLoggingMustBeEnabled
+28981>>>>>>
+28981>>>>>            Function_Return False
+28982>>>>>        End
+28982>>>>>>
+28982>>>>>
+28982>>>>>        //  Clear session properties
+28982>>>>>        Send UpdateSessionProperties True
+28983>>>>>        
+28983>>>>>        If not bLogWebSession Begin
+28985>>>>>            Forward Get ValidateSession sSessionKey to bResult
+28987>>>>>            Function_Return bResult
+28988>>>>>        End        
+28988>>>>>>
+28988>>>>>        
+28988>>>>>        Move False to bResult
+28989>>>>>        Get piSessionTimeout to iSessionTimeout 
+28990>>>>>        
+28990>>>>>        //  Check if session exists
+28990>>>>>        Send Clear of hoSessionDD
+28991>>>>>        Move sSessionKey to WebAppSession.SessionKey
+28992>>>>>        Send Find of hoSessionDD EQ Index.1
+28993>>>>>            
+28993>>>>>        If (Found) Begin
+28995>>>>>            //  Calculate timespan between now and last access time
+28995>>>>>            Move (CurrentDateTime()) to dtCurrent
+28996>>>>>            Move WebAppSession.LastAccessDate to dtLastAccess
+28997>>>>>            Get StringToTime of hoSessionDD dtLastAccess WebAppSession.LastAccessTime to dtLastAccess
+28998>>>>>            Move (dtCurrent - dtLastAccess) to tsDiff
+28999>>>>>            Move (SpanTotalMinutes(tsDiff)) to iSpanMinutes
+29000>>>>>            
+29000>>>>>            //  Check if session didn't time out
+29000>>>>>            If ((iSessionTimeout <= 0 or (iSpanMinutes < iSessionTimeout)) and WebAppSession.Active = "Y") Begin
+29002>>>>>                Forward Get ValidateSession sSessionKey to bResult
+29004>>>>>                   
+29004>>>>>                If (bResult) Begin
+29006>>>>>                    //  Update session record
+29006>>>>>                    Get TimeToString of hoSessionDD dtCurrent to sTime 
+29007>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.LastAccessDate to dtCurrent
+29008>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.LastAccessTime to sTime
+29009>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.UseCount to (WebAppSession.UseCount + 1)
+29010>>>>>                    Get Request_Validate of hoSessionDD to iErr
+29011>>>>>                    If (iErr) Begin
+29013>>>>>                        // this should not happen. If it does its a programming error
+29013>>>>>                        Error DFERR_PROGRAM C_$WebAppSesionValidateFailed
+29014>>>>>>
+29014>>>>>                        Function_Return False
+29015>>>>>                    End
+29015>>>>>>
+29015>>>>>                    Send Request_Save of hoSessionDD
+29016>>>>>                    
+29016>>>>>                    //  Update user properties
+29016>>>>>                    Send UpdateSessionProperties False
+29017>>>>>                End
+29017>>>>>>
+29017>>>>>            End
+29017>>>>>>
+29017>>>>>            Else Begin
+29018>>>>>                // Test the Creating New Session Flag to protect against infinite recursion....
+29018>>>>>                Get pbCreatingNewSession to bCreatingNewSession
+29019>>>>>                
+29019>>>>>                If (not(bCreatingNewSession)) Begin
+29021>>>>>                    Set pbCreatingNewSession to True                    
+29022>>>>>                    Send RecreateSession to ghoWebApp
+29023>>>>>                    Error DFERR_WEBAPP_SESSION_TIMEOUT "Your application session has timed out or is inactive, please login again."
+29024>>>>>>
+29024>>>>>                    Send NavigateRefresh of ghoWebApp          // refresh the WebApp at the client (triggers a login)
+29025>>>>>                    Set pbCreatingNewSession to False
+29026>>>>>                End
+29026>>>>>>
+29026>>>>>            End
+29026>>>>>>
+29026>>>>>        End
+29026>>>>>>
+29026>>>>>        Else Begin
+29027>>>>>            Error DFERR_WEBAPP_BAD_SESSION_KEY "Session key not known (reload page to recreate session)"
+29028>>>>>>
+29028>>>>>        End
+29028>>>>>>
+29028>>>>>        
+29028>>>>>        Function_Return bResult
+29029>>>>>    End_Function
+29030>>>>>    
+29030>>>>>    Function UserLogin String sLoginName String sPassword Returns Boolean
+29032>>>>>        String sSessionKey sUserPassword
+29032>>>>>        Handle hoSessionDD hoUserDD
+29032>>>>>        Boolean bMatch  
+29032>>>>>        
+29032>>>>>        Get phoSessionDD to hoSessionDD
+29033>>>>>        Get phoUserDD to hoUserDD
+29034>>>>>        Integer iErr eLoginMode
+29034>>>>>        
+29034>>>>>        // Refind session record
+29034>>>>>        Get psSessionKey to sSessionKey
+29035>>>>>        Send Clear of hoSessionDD
+29036>>>>>        Move sSessionKey to WebAppSession.SessionKey
+29037>>>>>        Send Find of hoSessionDD EQ Index.1
+29038>>>>>        
+29038>>>>>        If (Found and WebAppSession.SessionKey = sSessionKey) Begin
+29040>>>>>            Get peLoginMode to eLoginMode
+29041>>>>>            
+29041>>>>>            //  Find the user
+29041>>>>>            Move sLoginName to WebAppUser.LoginName
+29042>>>>>            Send Find of hoUserDD EQ Index.1
+29043>>>>>            
+29043>>>>>            // Check username and password
+29043>>>>>            If (Found and (Lowercase(sLoginName) = Lowercase(Trim(WebAppUser.LoginName)))) Begin
+29045>>>>>                Get Field_Current_Value of hoUserDD Field WebAppUser.Password to sUserPassword
+29046>>>>>                Get ComparePasswords (Trim(sUserPassword)) (Trim(sPassword)) to bMatch
+29047>>>>>                
+29047>>>>>                If (bMatch) Begin
+29049>>>>>                    // Store the login
+29049>>>>>                    Set Field_Changed_Value of hoUserDD Field WebAppUser.LastLogin to (CurrentDateTime())
+29050>>>>>                    Get Request_Validate of hoSessionDD to iErr
+29051>>>>>                    If (iErr) Begin
+29053>>>>>                        // this should not happen. If it does its a programming error
+29053>>>>>                        Error DFERR_PROGRAM C_$WebAppSesionValidateFailed
+29054>>>>>>
+29054>>>>>                        Function_Return False
+29055>>>>>                    End
+29055>>>>>>
+29055>>>>>                    
+29055>>>>>                    Send Request_Save of hoSessionDD
+29056>>>>>                    
+29056>>>>>                    // Update session properties
+29056>>>>>                    Send UpdateSessionProperties False
+29057>>>>>                    Send NotifyChangeRights
+29058>>>>>                    Function_Return True
+29059>>>>>                End
+29059>>>>>>
+29059>>>>>                Else Begin
+29060>>>>>                    //  We should rely directly on this buffer elsewhere but just be sure
+29060>>>>>                    Send Clear of hoUserDD
+29061>>>>>                End
+29061>>>>>>
+29061>>>>>            End
+29061>>>>>>
+29061>>>>>        End
+29061>>>>>>
+29061>>>>>          
+29061>>>>>        Function_Return False
+29062>>>>>    End_Function
+29063>>>>>    
+29063>>>>>    Function IsLoggedIn Returns Boolean
+29065>>>>>        String sLoginName
+29065>>>>>        Boolean bLogWebSession bLoggedIn
+29065>>>>>        
+29065>>>>>        Get pbLogWebSession to bLogWebSession
+29066>>>>>        If not bLogWebSession Begin
+29068>>>>>            Forward Get IsLoggedIn to bLoggedIn
+29070>>>>>            Function_Return bLoggedIn
+29071>>>>>        End
+29071>>>>>>
+29071>>>>>        
+29071>>>>>        Get psLoginName to sLoginName
+29072>>>>>        
+29072>>>>>        Function_Return (sLoginName <> "")
+29073>>>>>    End_Function
+29074>>>>>    
+29074>>>>>    
+29074>>>>>    //
+29074>>>>>    // This procedure is called when validating a session and after logging in. Its purpose is to 
+29074>>>>>    // update properties based on the session and user data. Augment this function to update 
+29074>>>>>    // properties based on the session / user table. Note that WebAppUser and WebAppSession contain
+29074>>>>>    // the right records when this procedure is called.
+29074>>>>>    //
+29074>>>>>    // Params:
+29074>>>>>    //      bClear   True if the procedure is called before session validation to clear properties.
+29074>>>>>    //
+29074>>>>>    Procedure UpdateSessionProperties Boolean bClear
+29076>>>>>        Handle hoUserDD
+29076>>>>>        
+29076>>>>>        Get phoUserDD to hoUserDD
+29077>>>>>        
+29077>>>>>        //  Update user properties
+29077>>>>>        If (not(bClear) and HasRecord(hoUserDD)) Begin
+29079>>>>>            Set psUsername to (Trim(WebAppUser.FullName))
+29080>>>>>            Set psLoginName to (Trim(WebAppUser.LoginName))
+29081>>>>>            Set piUserRights to WebAppUser.Rights
+29082>>>>>            
+29082>>>>>            Send OnSessionPropertiesSet 
+29083>>>>>        End
+29083>>>>>>
+29083>>>>>        Else Begin
+29084>>>>>            Set psUsername to ""
+29085>>>>>            Set psLoginName to ""
+29086>>>>>            Set piUserRights to 0
+29087>>>>>            
+29087>>>>>            Send OnSessionPropertiesClear
+29088>>>>>        End
+29088>>>>>>
+29088>>>>>    End_Procedure
+29089>>>>>    
+29089>>>>>    //
+29089>>>>>    // This function is called to perform the password comparison. It gets the entered password and
+29089>>>>>    // the password value of the user table as parameters. The WebAppUser buffer will contain the
+29089>>>>>    // right record. This function can be augmented to implement security features like storing the
+29089>>>>>    // password as a hashed value.
+29089>>>>>    //
+29089>>>>>    // Params:
+29089>>>>>    //      sUserPassword       Value of the WebAppUser.Password field.
+29089>>>>>    //      sEnteredPassword    Value entered on the login screen during login.
+29089>>>>>    //
+29089>>>>>    Function ComparePasswords String sUserPassword String sEnteredPassword Returns Boolean
+29091>>>>>        Function_Return (sUserPassword = sEnteredPassword)
+29092>>>>>    End_Function
+29093>>>>>    
+29093>>>>>    Procedure OnSessionPropertiesSet
+29095>>>>>        //  Empty event stub
+29095>>>>>    End_Procedure
+29096>>>>>    
+29096>>>>>    Procedure OnSessionPropertiesClear
+29098>>>>>        //  Empty event stub
+29098>>>>>    End_Procedure
+29099>>>>>    
+29099>>>>>    Procedure EndSession
+29101>>>>>        Integer iErr
+29101>>>>>        Boolean bLogWebSession
+29101>>>>>        Handle hoSessionDD       
+29101>>>>>        
+29101>>>>>        Get phoSessionDD to hoSessionDD
+29102>>>>>        Get pbLogWebSession to bLogWebSession
+29103>>>>>        If not bLogWebSession Begin
+29105>>>>>            Forward Send EndSession
+29107>>>>>            Procedure_Return
+29108>>>>>        End
+29108>>>>>>
+29108>>>>>            
+29108>>>>>        //  Check if session exists
+29108>>>>>        Send Clear of hoSessionDD
+29109>>>>>        Get psSessionKey to WebAppSession.SessionKey
+29110>>>>>        
+29110>>>>>        Send Find of hoSessionDD EQ Index.1
+29111>>>>>        If (Found) Begin
+29113>>>>>            Set Field_Changed_Value of hoSessionDD Field WebAppSession.Active to "N"
+29114>>>>>            Get Request_Validate of hoSessionDD to iErr
+29115>>>>>            If (iErr) Begin
+29117>>>>>                // this should not happen. If it does its a programming error
+29117>>>>>                Error DFERR_PROGRAM C_$WebAppSesionValidateFailed
+29118>>>>>>
+29118>>>>>                Procedure_Return
+29119>>>>>            End
+29119>>>>>>
+29119>>>>>            Send Request_Save of hoSessionDD
+29120>>>>>        End
+29120>>>>>>
+29120>>>>>    End_Procedure
+29121>>>>>
+29121>>>>>End_Class
+29122>>>>>
+29122>>>
+29122>>>Object oSessionManager is a cWebSessionManagerStandard
+29124>>>End_Object
+29125>>>
+29125>    Use LoginDialog.wo
+Including file: LoginDialog.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\LoginDialog.wo)
+29125>>>Use cWebModalDialog.pkg
+29125>>>Use cWebForm.pkg
+29125>>>Use cWebButton.pkg
+29125>>>Use cWebPanel.pkg
+29125>>>Use cWebLabel.pkg
+29125>>>
+29125>>>Object oLoginDialog is a cWebModalDialog
+29127>>>    Set piMinWidth to 370
+29128>>>    Set piMinHeight to 220
+29129>>>    Set psCaption to "Login"
+29130>>>    Set pbShowClose to (peLoginMode(oWebApp) <> lmLoginRequired)
+29131>>>    Set pbLoginModeEnforced to False
+29132>>>    
+29132>>>    Delegate Set phoLoginView to Self
+29134>>>    
+29134>>>    Object oTopPanel is a cWebPanel
+29136>>>        Set peRegion to prTop
+29137>>>        Set piHeight to 55       
+29138>>>        
+29138>>>        Object oDescription is a cWebLabel
+29140>>>            Set psCaption to "Please enter your username and password to login."
+29141>>>            Set peAlign to alignCenter
+29142>>>        End_Object
+29143>>>    End_Object
+29144>>>    
+29144>>>    Object oRightPanel is a cWebPanel
+29146>>>        Set peRegion to prRight
+29147>>>        Set piWidth to 20       
+29148>>>    End_Object
+29149>>>    
+29149>>>    Object oMainPanel is a cWebPanel
+29151>>>        Set peRegion to prCenter
+29152>>>        
+29152>>>        Object oLoginName is a cWebForm
+29154>>>            Set psLabel to "Login Name:"
+29155>>>            Set peLabelPosition to C_WebDefault
+29156>>>            Set peLabelAlign to alignRight
+29157>>>            Set piMaxLength to 20
+29158>>>        End_Object
+29159>>>        
+29159>>>        Object oPassword is a cWebForm
+29161>>>            Set psLabel to "Password:"
+29162>>>            Set pbPassword to True
+29163>>>            Set peLabelAlign to alignRight
+29164>>>            Set piMaxLength to 20
+29165>>>        End_Object   
+29166>>>        
+29166>>>        Object oWarning is a cWebLabel
+29168>>>            Set pbVisible to False
+29169>>>            Set psCaption to "Invalid loginname or password."
+29170>>>            Set psCSSClass to "Warning"
+29171>>>            Set peAlign to alignCenter
+29172>>>        End_Object
+29173>>>    End_Object
+29174>>>    
+29174>>>    Object oButtonPanel is a cWebPanel
+29176>>>        Set peRegion to prBottom
+29177>>>        Set piColumnCount to 3
+29178>>>        Set piMinHeight to 40
+29179>>>
+29179>>>        Object oLoginButton is a cWebButton
+29181>>>            Set pbShowLabel to False
+29182>>>            Set piColumnIndex to 2
+29183>>>            Set psCaption to "Login"
+29184>>>            Set pbServerOnClick to True
+29185>>>                        
+29185>>>            Procedure OnClick
+29188>>>                Send DoLogin
+29189>>>            End_Procedure
+29190>>>            
+29190>>>        End_Object
+29191>>>        
+29191>>>    End_Object
+29192>>>    
+29192>>>    Procedure DoLogin
+29195>>>        String sLoginName sPassword
+29195>>>        Boolean bResult
+29195>>>        Handle hoDefaultView
+29195>>>        
+29195>>>        WebGet psValue of oLoginName to sLoginName
+29196>>>        WebGet psValue of oPassword to sPassword
+29197>>>        
+29197>>>        Get UserLogin of ghoWebSessionManager sLoginName sPassword to bResult
+29198>>>        
+29198>>>        If (bResult) Begin
+29200>>>            Send Hide of oLoginDialog
+29201>>>            Get GetDefaultView to hoDefaultView
+29202>>>            If (hoDefaultView > 0) Begin
+29204>>>                Send Show of hoDefaultView
+29205>>>            End
+29205>>>>
+29205>>>            
+29205>>>            // clear the login values. we don't want to return the login id & password as synchronized properties....
+29205>>>            WebSet psValue of oLoginName to ""
+29206>>>            WebSet psValue of oPassword  to ""
+29207>>>            WebSet pbVisible of oWarning to False
+29208>>>        End
+29208>>>>
+29208>>>        Else Begin
+29209>>>            WebSet pbVisible of oWarning to True
+29210>>>        End
+29210>>>>
+29210>>>    End_Procedure
+29211>>>    
+29211>>>    
+29211>>>    Set pbServerOnSubmit to True
+29212>>>    Procedure OnSubmit
+29215>>>         Send DoLogin
+29216>>>    End_Procedure
+29217>>>End_Object
+29218>    Use WebResourceManager.wo
+Including file: WebResourceManager.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\WebResourceManager.wo)
+29218>>>Use cWebResourceManager.pkg
+29218>>>
+29218>>>Object oWebResourceManager is a cWebResourceManager
+29220>>>End_Object
+29221>  Use Product.wo
+Including file: Product.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\Product.wo)
+29221>>>// C:\DataFlex Projects\TutorialWS\AppSrc\Product.wo
+29221>>>// Product
+29221>>>//
+29221>>>
+29221>>>Use cWebView.pkg
+29221>>>Use cWebPanel.pkg
+29221>>>Use cWebForm.pkg
+29221>>>
+29221>>>Use cProductDataDictionary.dd
+Including file: cProductDataDictionary.dd    (C:\DataFlex Projects\TutorialWS\DDSrc\cProductDataDictionary.dd)
+29221>>>>>Use DataDict.pkg
+29221>>>>>
+29221>>>>>Open Product
+Including file: Product.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\Product.fd)
+29223>>>>>Open PARAM
+Including file: PARAM.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\PARAM.fd)
+29225>>>>>Open Order_Detail
+Including file: Order_Detail.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\Order_Detail.fd)
+29227>>>>>
+29227>>>>>Object oCategoryVT is a CodeValidationTable
+29229>>>>>  Set Type_Value to "PRODCAT"
+29230>>>>>End_Object
+29231>>>>>
+29231>>>>>Register_Object oProductWebLookup
+29231>>>>>
+29231>>>>>Class cProductDataDictionary is a DataDictionary
+29232>>>>>    
+29232>>>>>    Procedure Construct_Object
+29234>>>>>        Forward Send Construct_Object
+29236>>>>>        Set Main_File to Product.File_Number
+29237>>>>>
+29237>>>>>      Set Add_Client_File to Order_Detail.File_Number
+29238>>>>>
+29238>>>>>      Set Add_System_File to PARAM.File_Number DD_Lock_On_All
+29239>>>>>
+29239>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+29240>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+29241>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+29242>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+29243>>>>>
+29243>>>>>      Set Field_Label_Long Field Product.ProductId to "ID"
+29244>>>>>      Set Field_Auto_Increment Field Product.ProductId to File_Field PARAM.Product_ID
+29245>>>>>
+29245>>>>>      Set Field_Label_Long Field Product.Number to "Product Number"
+29246>>>>>      Set Field_WebPrompt_Object Field Product.Number to oProductWebLookup
+29247>>>>>
+29247>>>>>      Set Field_Label_Long Field Product.Name to "Name"
+29248>>>>>      Set Field_WebPrompt_Object Field Product.Name to oProductWebLookup
+29249>>>>>
+29249>>>>>      Set Field_Label_Long Field Product.EAN to "EAN"
+29250>>>>>
+29250>>>>>      Set Field_Value_Table Field Product.Category to oCategoryVT
+29251>>>>>
+29251>>>>>    End_Procedure
+29252>>>>>
+29252>>>>>End_Class
+29253>>>>>
+29253>>>>>Use ProductWebLookup.wo
+Including file: ProductWebLookup.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\ProductWebLookup.wo)
+29253>>>>>>>// C:\DataFlex Projects\TutorialWS\AppSrc\ProductWebLookup.wo
+29253>>>>>>>// Product Lookup List
+29253>>>>>>>//
+29253>>>>>>>
+29253>>>>>>>Use cWebModalDialog
+29253>>>>>>>Use cWebPanel.pkg
+29253>>>>>>>Use cWebButton.pkg
+29253>>>>>>>Use cWebPromptList.pkg
+29253>>>>>>>Use cWebColumn.pkg
+29253>>>>>>>
+29253>>>>>>>Use cProductDataDictionary.dd
+29253>>>>>>>
+29253>>>>>>>Object oProductWebLookup is a cWebModalDialog
+29255>>>>>>>  Set piColumnCount to 12
+29256>>>>>>>  Set psCaption to "Product Lookup List"
+29257>>>>>>>  Set piWidth to 700
+29258>>>>>>>  Set piHeight to 400
+29259>>>>>>>
+29259>>>>>>>  Object oProduct_DD is a cProductDataDictionary
+29261>>>>>>>  End_Object 
+29262>>>>>>>
+29262>>>>>>>  Set Main_DD To oProduct_DD
+29263>>>>>>>  Set Server  To oProduct_DD
+29264>>>>>>>
+29264>>>>>>>
+29264>>>>>>>  Object oWebMainPanel is a cWebPanel
+29266>>>>>>>    Set piColumnCount to 12
+29267>>>>>>>
+29267>>>>>>>    Object oPromptList is a cWebPromptList
+29269>>>>>>>      Set pbFillHeight to True
+29270>>>>>>>      Set piColumnSpan to 12
+29271>>>>>>>
+29271>>>>>>>      Object oProductNumber is a cWebColumn
+29273>>>>>>>        Entry_Item Product.Number
+29274>>>>>>>        Set psCaption to "Product Number"
+29275>>>>>>>        Set piWidth to 525
+29276>>>>>>>      End_Object 
+29277>>>>>>>
+29277>>>>>>>      Object oProductName is a cWebColumn
+29279>>>>>>>        Entry_Item Product.Name
+29280>>>>>>>        Set psCaption to "Name"
+29281>>>>>>>        Set piWidth to 525
+29282>>>>>>>      End_Object 
+29283>>>>>>>    End_Object 
+29284>>>>>>>
+29284>>>>>>>    Object oOkButton is a cWebButton
+29286>>>>>>>      Set psCaption to "OK"
+29287>>>>>>>      Set piColumnSpan to 2
+29288>>>>>>>      Set piColumnIndex to 6
+29289>>>>>>>
+29289>>>>>>>      Procedure OnClick
+29292>>>>>>>        Send Ok of oPromptList
+29293>>>>>>>      End_Procedure
+29294>>>>>>>
+29294>>>>>>>    End_Object 
+29295>>>>>>>
+29295>>>>>>>    Object oCancelButton is a cWebButton
+29297>>>>>>>      Set psCaption to "Cancel"
+29298>>>>>>>      Set piColumnSpan to 2
+29299>>>>>>>      Set piColumnIndex to 8
+29300>>>>>>>      Procedure OnClick
+29303>>>>>>>        Send Cancel of oPromptList
+29304>>>>>>>      End_Procedure
+29305>>>>>>>
+29305>>>>>>>    End_Object 
+29306>>>>>>>
+29306>>>>>>>    Object oSearchButton is a cWebButton
+29308>>>>>>>      Set psCaption to "Search..."
+29309>>>>>>>      Set piColumnSpan to 2
+29310>>>>>>>      Set piColumnIndex to 10
+29311>>>>>>>
+29311>>>>>>>      Procedure OnClick
+29314>>>>>>>        Send Search of oPromptList
+29315>>>>>>>      End_Procedure
+29316>>>>>>>
+29316>>>>>>>    End_Object 
+29317>>>>>>>  End_Object 
+29318>>>>>>>
+29318>>>>>>>  Set pbServerOnShow to True
+29319>>>>>>>  Procedure OnShow 
+29322>>>>>>>    Send InitializePromptList of oPromptList
+29323>>>>>>>  End_Procedure 
+29324>>>>>>>
+29324>>>>>>>  Set pbServerOnSubmit to True
+29325>>>>>>>  Procedure OnSubmit 
+29328>>>>>>>    Send Ok of oPromptList
+29329>>>>>>>  End_Procedure 
+29330>>>>>>>
+29330>>>>>>>End_Object 
+29331>>>
+29331>>>Object oProduct is a cWebView
+29333>>>  Set piColumnCount to 12
+29334>>>  Set psCaption to "Product"
+29335>>>  Set piWidth to 700
+29336>>>  Set pbClearAfterSave to False
+29337>>>
+29337>>>  Object oProduct_DD is a cProductDataDictionary
+29339>>>  End_Object 
+29340>>>
+29340>>>  Set Main_DD To oProduct_DD
+29341>>>  Set Server  To oProduct_DD
+29342>>>
+29342>>>
+29342>>>  Object oWebMainPanel is a cWebPanel
+29344>>>    Set piColumnCount to 12
+29345>>>
+29345>>>//    Object oProductProductId is a cWebForm
+29345>>>//      Entry_Item Product.ProductId
+29345>>>//      Set piColumnSpan to 5
+29345>>>//      Set piColumnIndex to 0
+29345>>>//      Set psLabel to "ID:"
+29345>>>//      Set peLabelAlign to alignLeft
+29345>>>//    End_Object 
+29345>>>
+29345>>>    Object oProductNumber is a cWebForm
+29347>>>      Entry_Item Product.Number
+29348>>>      Set piColumnSpan to 12
+29349>>>      Set piColumnIndex to 0
+29350>>>      Set psLabel to "Product Number:"
+29351>>>      Set peLabelAlign to alignLeft
+29352>>>    End_Object 
+29353>>>
+29353>>>    Object oProductName is a cWebForm
+29355>>>      Entry_Item Product.Name
+29356>>>      Set piColumnSpan to 6
+29357>>>      Set piColumnIndex to 0
+29358>>>      Set psLabel to "Name:"
+29359>>>      Set peLabelAlign to alignLeft
+29360>>>    End_Object 
+29361>>>
+29361>>>    Object oProduct_Category is a cWebCombo
+29363>>>      Entry_Item Product.Category
+29364>>>        Set piColumnSpan to 6
+29365>>>        Set psLabel to "Category:"
+29366>>>      Set piColumnIndex to 6
+29367>>>    End_Object
+29368>>>
+29368>>>    Object oProductEAN is a cWebForm
+29370>>>      Entry_Item Product.EAN
+29371>>>      Set piColumnSpan to 6
+29372>>>      Set piColumnIndex to 0
+29373>>>      Set psLabel to "EAN:"
+29374>>>      Set peLabelAlign to alignLeft
+29375>>>    End_Object 
+29376>>>
+29376>>>    Object oProduct_Price is a cWebForm
+29378>>>      Entry_Item Product.Price
+29379>>>        Set piColumnSpan to 6
+29380>>>        Set psLabel to "Price:"
+29381>>>      Set piColumnIndex to 6
+29382>>>    End_Object
+29383>>>  End_Object 
+29384>>>
+29384>>>End_Object 
+29385>  Use Order.wo
+Including file: Order.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\Order.wo)
+29385>>>// C:\DataFlex Projects\TutorialWS\AppSrc\Order.wo
+29385>>>// Order
+29385>>>//
+29385>>>
+29385>>>Use cWebView.pkg
+29385>>>Use cWebPanel.pkg
+29385>>>Use cWebForm.pkg
+29385>>>Use cWebEdit.pkg
+29385>>>Use cWebGrid.pkg
+29385>>>Use cWebColumn.pkg
+29385>>>
+29385>>>Use cWebSuggestionForm.pkg
+29385>>>Use cWebParentCombo.pkg
+29385>>>
+29385>>>Use cProductDataDictionary.dd
+29385>>>Use cOrderDataDictionary.dd
+Including file: cOrderDataDictionary.dd    (C:\DataFlex Projects\TutorialWS\DDSrc\cOrderDataDictionary.dd)
+29385>>>>>Use DataDict.pkg
+29385>>>>>
+29385>>>>>Open Order
+Including file: Order.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\Order.fd)
+29387>>>>>Open PARAM
+29389>>>>>Open Order_Detail
+29391>>>>>
+29391>>>>>Class cOrderDataDictionary is a DataDictionary
+29392>>>>>    
+29392>>>>>    Procedure Construct_Object
+29394>>>>>        Forward Send Construct_Object
+29396>>>>>        Set Main_File to Order.File_Number
+29397>>>>>
+29397>>>>>      Set Add_Client_File to Order_Detail.File_Number
+29398>>>>>
+29398>>>>>      Set Add_System_File to PARAM.File_Number DD_Lock_On_All
+29399>>>>>
+29399>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+29400>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+29401>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+29402>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+29403>>>>>
+29403>>>>>      Set Field_Auto_Increment Field Order.OrderId to File_Field PARAM.Order_ID
+29404>>>>>
+29404>>>>>    End_Procedure
+29405>>>>>
+29405>>>>>End_Class
+29406>>>Use cOrder_DetailDataDictionary.dd
+Including file: cOrder_DetailDataDictionary.dd    (C:\DataFlex Projects\TutorialWS\DDSrc\cOrder_DetailDataDictionary.dd)
+29406>>>>>Use DataDict.pkg
+29406>>>>>
+29406>>>>>Open Order_Detail
+29408>>>>>Open PARAM
+29410>>>>>Open Order
+29412>>>>>Open Product
+29414>>>>>
+29414>>>>>Register_Object oOrder_DetailWebLookup
+29414>>>>>
+29414>>>>>Class cOrder_DetailDataDictionary is a DataDictionary
+29415>>>>>    
+29415>>>>>    Procedure Construct_Object
+29417>>>>>        Forward Send Construct_Object
+29419>>>>>        Set Main_File to Order_Detail.File_Number
+29420>>>>>
+29420>>>>>      Set Add_Server_File to Order.File_Number
+29421>>>>>      Set Add_Server_File to Product.File_Number
+29422>>>>>
+29422>>>>>      Set Add_System_File to PARAM.File_Number DD_Lock_On_All
+29423>>>>>
+29423>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+29424>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+29425>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+29426>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+29427>>>>>
+29427>>>>>      Set Field_Auto_Increment Field Order_Detail.Order_Detail_Id to File_Field PARAM.Order_Detail_ID
+29428>>>>>      Set Key_Field_State Field Order_Detail.Order_Detail_Id to True
+29429>>>>>      Set Field_WebPrompt_Object Field Order_Detail.Order_Detail_Id to oOrder_DetailWebLookup
+29430>>>>>
+29430>>>>>      Set Field_WebPrompt_Object Field Order_Detail.ProductId to oOrder_DetailWebLookup
+29431>>>>>
+29431>>>>>    End_Procedure
+29432>>>>>    
+29432>>>>>    Procedure Update
+29434>>>>>      Forward Send Update
+29436>>>>>      Move (Order_Detail.Amount * Product.Price) to Order_Detail.Total
+29437>>>>>      Send AdjustBalance Order_Detail.Total
+29438>>>>>    End_Procedure
+29439>>>>>//    
+29439>>>>>    Procedure AdjustBalance Number nTotal
+29441>>>>>//      Move 0 to Order.Price
+29441>>>>>      Add nTotal to Order.Price          //The reason we're just adding instead of clearing first is to calculate the total even for other items in the grid
+29442>>>>>    End_Procedure
+29443>>>>>    
+29443>>>>>    Procedure AdjustDisplayTotal Integer iField String sValue
+29445>>>>>      Integer iQty
+29445>>>>>      Number nAmount
+29445>>>>>      
+29445>>>>>      Get Field_Current_Value Field Order_Detail.Amount to iQty
+29446>>>>>      Get Field_Current_Value Field Product.Price to nAmount
+29447>>>>>      
+29447>>>>>      Set Field_Current_Value Field Order_Detail.Total to (iQty * nAmount)
+29448>>>>>    End_Procedure
+29449>>>>>
+29449>>>>>End_Class
+29450>>>>>
+29450>>>>>Use Order_DetailWebLookup.wo
+Including file: Order_DetailWebLookup.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\Order_DetailWebLookup.wo)
+29450>>>>>>>// C:\DataFlex Projects\TutorialWS\AppSrc\Order_DetailWebLookup.wo
+29450>>>>>>>// Order_Detail Lookup List
+29450>>>>>>>//
+29450>>>>>>>
+29450>>>>>>>Use cWebModalDialog
+29450>>>>>>>Use cWebPanel.pkg
+29450>>>>>>>Use cWebButton.pkg
+29450>>>>>>>Use cWebPromptList.pkg
+29450>>>>>>>Use cWebColumn.pkg
+29450>>>>>>>
+29450>>>>>>>Use cProductDataDictionary.dd
+29450>>>>>>>Use cOrderDataDictionary.dd
+29450>>>>>>>Use cOrder_DetailDataDictionary.dd
+29450>>>>>>>
+29450>>>>>>>Object oOrder_DetailWebLookup is a cWebModalDialog
+29452>>>>>>>  Set piColumnCount to 12
+29453>>>>>>>  Set psCaption to "Order_Detail Lookup List"
+29454>>>>>>>  Set piWidth to 700
+29455>>>>>>>  Set piHeight to 400
+29456>>>>>>>
+29456>>>>>>>  Object oProduct_DD is a cProductDataDictionary
+29458>>>>>>>  End_Object 
+29459>>>>>>>
+29459>>>>>>>  Object oOrder_DD is a cOrderDataDictionary
+29461>>>>>>>  End_Object 
+29462>>>>>>>
+29462>>>>>>>  Object oOrder_Detail_DD is a cOrder_DetailDataDictionary
+29464>>>>>>>    Set DDO_Server To oOrder_DD
+29465>>>>>>>    Set DDO_Server To oProduct_DD
+29466>>>>>>>  End_Object 
+29467>>>>>>>
+29467>>>>>>>  Set Main_DD To oOrder_Detail_DD
+29468>>>>>>>  Set Server  To oOrder_Detail_DD
+29469>>>>>>>
+29469>>>>>>>
+29469>>>>>>>  Object oWebMainPanel is a cWebPanel
+29471>>>>>>>    Set piColumnCount to 12
+29472>>>>>>>
+29472>>>>>>>    Object oPromptList is a cWebPromptList
+29474>>>>>>>      Set pbFillHeight to True
+29475>>>>>>>      Set piColumnSpan to 12
+29476>>>>>>>
+29476>>>>>>>      Object oOrder_DetailOrder_Detail_Id is a cWebColumn
+29478>>>>>>>        Entry_Item Order_Detail.Order_Detail_Id
+29479>>>>>>>        Set psCaption to "Order Detail Id"
+29480>>>>>>>        Set piWidth to 147
+29481>>>>>>>      End_Object 
+29482>>>>>>>
+29482>>>>>>>      Object oProductProductId is a cWebColumn
+29484>>>>>>>        Entry_Item Product.ProductId
+29485>>>>>>>        Set psCaption to "ProductId"
+29486>>>>>>>        Set piWidth to 147
+29487>>>>>>>      End_Object 
+29488>>>>>>>    End_Object 
+29489>>>>>>>
+29489>>>>>>>    Object oOkButton is a cWebButton
+29491>>>>>>>      Set psCaption to "OK"
+29492>>>>>>>      Set piColumnSpan to 2
+29493>>>>>>>      Set piColumnIndex to 6
+29494>>>>>>>
+29494>>>>>>>      Procedure OnClick
+29497>>>>>>>        Send Ok of oPromptList
+29498>>>>>>>      End_Procedure
+29499>>>>>>>
+29499>>>>>>>    End_Object 
+29500>>>>>>>
+29500>>>>>>>    Object oCancelButton is a cWebButton
+29502>>>>>>>      Set psCaption to "Cancel"
+29503>>>>>>>      Set piColumnSpan to 2
+29504>>>>>>>      Set piColumnIndex to 8
+29505>>>>>>>      Procedure OnClick
+29508>>>>>>>        Send Cancel of oPromptList
+29509>>>>>>>      End_Procedure
+29510>>>>>>>
+29510>>>>>>>    End_Object 
+29511>>>>>>>
+29511>>>>>>>    Object oSearchButton is a cWebButton
+29513>>>>>>>      Set psCaption to "Search..."
+29514>>>>>>>      Set piColumnSpan to 2
+29515>>>>>>>      Set piColumnIndex to 10
+29516>>>>>>>
+29516>>>>>>>      Procedure OnClick
+29519>>>>>>>        Send Search of oPromptList
+29520>>>>>>>      End_Procedure
+29521>>>>>>>
+29521>>>>>>>    End_Object 
+29522>>>>>>>  End_Object 
+29523>>>>>>>
+29523>>>>>>>  Set pbServerOnShow to True
+29524>>>>>>>  Procedure OnShow 
+29527>>>>>>>    Send InitializePromptList of oPromptList
+29528>>>>>>>  End_Procedure 
+29529>>>>>>>
+29529>>>>>>>  Set pbServerOnSubmit to True
+29530>>>>>>>  Procedure OnSubmit 
+29533>>>>>>>    Send Ok of oPromptList
+29534>>>>>>>  End_Procedure 
+29535>>>>>>>
+29535>>>>>>>End_Object 
+29536>>>
+29536>>>Object oOrder is a cWebView
+29538>>>  Set piColumnCount to 12
+29539>>>  Set psCaption to "Order"
+29540>>>  Set piWidth to 700
+29541>>>
+29541>>>  Object oProduct_DD is a cProductDataDictionary
+29543>>>    Procedure OnPostFind Integer eMessage Boolean bFound
+29546>>>      Forward Send OnPostFind eMessage bFound
+29548>>>      
+29548>>>      Boolean bSynching
+29548>>>      
+29548>>>      Get AppSynching to bSynching
+29549>>>      
+29549>>>      If (not(bSynching)) Begin
+29551>>>        Send setPriceDefault of oOrder_Detail_DD Product.Price  
+29552>>>      End
+29552>>>>
+29552>>>      
+29552>>>    End_Procedure
+29553>>>  End_Object 
+29554>>>
+29554>>>  Object oOrder_DD is a cOrderDataDictionary
+29556>>>    // this lets you save a new parent DD from within child DD
+29556>>>    Set Allow_Foreign_New_Save_State to True
+29557>>>  End_Object 
+29558>>>
+29558>>>  Object oOrder_Detail_DD is a cOrder_DetailDataDictionary
+29560>>>    Set DDO_Server To oOrder_DD
+29561>>>    Set DDO_Server To oProduct_DD
+29562>>>    Set Constrain_File to Order.File_Number
+29563>>>    
+29563>>>    Procedure setPriceDefault Number nNum
+29566>>>      Set Field_Changed_Value Field Order_Detail.UnitPrice to nNum    //
+29567>>>      Set Field_Changed_Value Field Order_Detail.Amount to 1
+29568>>>      
+29568>>>      Send AdjustDisplayTotal
+29569>>>      
+29569>>>    End_Procedure
+29570>>>    
+29570>>>  End_Object 
+29571>>>
+29571>>>  Set Main_DD To oOrder_DD
+29572>>>  Set Server  To oOrder_DD
+29573>>>
+29573>>>
+29573>>>  Object oWebMainPanel is a cWebPanel
+29575>>>    Set piColumnCount to 12
+29576>>>
+29576>>>    Object oOrderOrderId is a cWebForm
+29578>>>      Entry_Item Order.OrderId
+29579>>>      Set piColumnSpan to 5
+29580>>>      Set piColumnIndex to 0
+29581>>>      Set psLabel to "OrderId:"
+29582>>>      Set peLabelAlign to alignLeft
+29583>>>    End_Object 
+29584>>>
+29584>>>    Object oOrderCustomer is a cWebSuggestionForm
+29586>>>      Entry_Item Order.Customer
+29587>>>      Set piColumnSpan to 12
+29588>>>      Set piColumnIndex to 0
+29589>>>      Set psLabel to "Customer:"
+29590>>>      Set peLabelAlign to alignLeft
+29591>>>      Set pbFullText to True
+29592>>>    End_Object 
+29593>>>
+29593>>>    Object oOrderDate is a cWebDateForm
+29595>>>      Entry_Item Order.Date
+29596>>>      Set piColumnSpan to 5
+29597>>>      Set piColumnIndex to 0
+29598>>>      Set psLabel to "Date:"
+29599>>>      Set peLabelAlign to alignLeft
+29600>>>    End_Object 
+29601>>>
+29601>>>    Object oOrderPrice is a cWebForm
+29603>>>      Entry_Item Order.Price
+29604>>>      Set piColumnSpan to 5
+29605>>>      Set piColumnIndex to 7
+29606>>>      Set psLabel to "Balance:"
+29607>>>      Set peLabelAlign to alignLeft
+29608>>>    End_Object 
+29609>>>
+29609>>>    Object oOrderComment is a cWebEdit
+29611>>>      Entry_Item Order.Comment
+29612>>>      Set piColumnSpan to 12
+29613>>>      Set piColumnIndex to 0
+29614>>>      Set psLabel to "Comment:"
+29615>>>      Set pbFillHeight to True
+29616>>>      Set peLabelAlign to alignLeft
+29617>>>    End_Object 
+29618>>>
+29618>>>    Object oDetailGrid is a cWebGrid
+29620>>>      Set Server to oOrder_Detail_DD
+29621>>>      Set piOrdering to 5
+29622>>>      Set pbFillHeight to True
+29623>>>      Set piColumnSpan to 12
+29624>>>
+29624>>>      Object oProductNumber is a cWebColumn
+29626>>>        Entry_Item Product.Number
+29627>>>        Set psCaption to "Product Number"
+29628>>>        Set piWidth to 525
+29629>>>      End_Object 
+29630>>>
+29630>>>      Object oProductName is a cWebColumn
+29632>>>        Entry_Item Product.Name
+29633>>>        Set psCaption to "Name"
+29634>>>        Set piWidth to 525
+29635>>>      End_Object 
+29636>>>
+29636>>>      Object oOrderPrice is a cWebColumn
+29638>>>        Entry_Item Order_Detail.UnitPrice
+29639>>>        Set psCaption to "Price"
+29640>>>        Set piWidth to 147
+29641>>>        
+29641>>>        Set pbServerOnChange to True
+29642>>>        
+29642>>>        Procedure OnChange String sNewValue String sOldValue
+29645>>>          Send AdjustDisplayTotal of oOrder_Detail_DD
+29646>>>        End_Procedure
+29647>>>      End_Object 
+29648>>>
+29648>>>      Object oOrder_DetailAmount is a cWebColumn
+29650>>>        Entry_Item Order_Detail.Amount
+29651>>>        Set psCaption to "Amount"
+29652>>>        Set piWidth to 147
+29653>>>        
+29653>>>        Set pbServerOnChange to True
+29654>>>        Procedure OnChange String sNewValue String sOldValue
+29657>>>          Send AdjustDisplayTotal of oOrder_Detail_DD
+29658>>>        End_Procedure
+29659>>>      End_Object 
+29660>>>
+29660>>>      Object oOrder_DetailTotal is a cWebColumn
+29662>>>        Entry_Item Order_Detail.Total
+29663>>>        Set psCaption to "Total"
+29664>>>        Set piWidth to 147
+29665>>>      End_Object 
+29666>>>    End_Object 
+29667>>>  End_Object 
+29668>>>
+29668>>>End_Object 
+29669>  Use OrderList.wo
+Including file: OrderList.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\OrderList.wo)
+29669>>>Use cWebView.pkg
+29669>>>Use cWebPanel.pkg
+29669>>>Use cWebForm.pkg 
+29669>>>Use cOrderDataDictionary.dd
+29669>>>Use cWebColumn.pkg
+29669>>>
+29669>>>Object oOrderList is a cWebView
+29671>>>  Object oOrder_DD is a cOrderDataDictionary
+29673>>>  End_Object
+29674>>>
+29674>>>  Set Main_DD to oOrder_DD
+29675>>>  Set Server to oOrder_DD
+29676>>>
+29676>>>    Set piWidth to 700
+29677>>>    Set psCaption to "OrderList"
+29678>>>
+29678>>>
+29678>>>    Object oWebMainPanel is a cWebPanel
+29680>>>        Set piColumnCount to 12
+29681>>>        
+29681>>>        Object oOrderGridList is a cWebGrid
+29683>>>          Set piHeight to 500
+29684>>>                             
+29684>>>          // This procedure finds the records in the corresponding DD on the OnLoad event
+29684>>>          // it gets fired as this object is loading into the view                             
+29684>>>          Procedure OnLoad   
+29687>>>            Send Find of oOrder_DD FIRST_RECORD 1
+29688>>>          End_Procedure
+29689>>>          
+29689>>>          Object oOrder_OrderId is a cWebColumn
+29691>>>            Entry_Item Order.OrderId
+29692>>>              Set psCaption to "Order ID"
+29693>>>              Set piWidth to 50
+29694>>>          End_Object
+29695>>>
+29695>>>          Object oOrder_Customer is a cWebColumn
+29697>>>            Entry_Item Order.Customer
+29698>>>              Set psCaption to "Customer"
+29699>>>              Set piWidth to 50
+29700>>>          End_Object
+29701>>>
+29701>>>          Object oOrder_Price is a cWebColumn
+29703>>>            Entry_Item Order.Price
+29704>>>              Set psCaption to "Price"
+29705>>>              Set piWidth to 50
+29706>>>            Set pbEnabled to False
+29707>>>          End_Object
+29708>>>
+29708>>>          Object oOrder_Date is a cWebColumnDate
+29710>>>            Entry_Item Order.Date
+29711>>>              Set psCaption to "Date"
+29712>>>              Set piWidth to 50
+29713>>>          End_Object
+29714>>>        End_Object
+29715>>>    End_Object 
+29716>>>
+29716>>>End_Object
+29717>    
+29717>End_Object
+29718>
+29718>Send StartWebApp of oWebApp
+29719>
+Summary
+Memory Available: 2147483647
+Total Warnings : 0
+Total Errors   : 0
+Total Symbols  : 20340
+Total Resources: 0
+Total Commands : 29718
+Total Windows  : 1
+Total Pages    : 1
+Static Data    : 294055
+Message area   : 195640
+Total Blocks   : 12480

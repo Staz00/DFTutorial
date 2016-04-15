@@ -1,0 +1,38 @@
+-----------------------------------------------------------------------------
+  DATE: 15/04/2016      TIME: 11:51                                  PAGE:  1
+  FILE DEFINITION FOR FILE: Order (# 3)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : DATAFLEX
+  FILE ROOT NAME            : Order
+  USER DISPLAY NAME         : Order
+  DATAFLEX FILE NAME        : Order
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 640       ( USED: 595 )
+  MAX NUMBER OF RECORDS     : 10000     ( USED: 0 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : FILE
+  HEADER INTEGRITY CHECKING : YES
+  TRANSACTION TYPE          : CLIENT ATOMIC
+  RECORD IDENTITY INDEX     : 0 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : 
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  OrderId          NUM   14.0     1  1   
+  2  Customer         ASC     50     8  2   
+  3  Price            NUM   14.0    58      
+  4  Date             DAT      6    65      
+  5  Paid             BIN     16    68      
+  6  Comment          TEX    512    84      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    OrderId         NO  NO       7      3       1     ON-LINE
+
+  2    Customer        NO  NO       57     5       2     ON-LINE
+       OrderId         NO  NO 
+

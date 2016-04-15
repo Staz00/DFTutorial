@@ -1,0 +1,121 @@
+[Workspace]
+CurrentProject=WebApp.src
+Location=C:\DataFlex Projects\TutorialWS\IdeSrc\rolmc_Studio.dsk
+CreateNew=3
+[TabWindows]
+GroupCount=1
+HorizontalGroups=1
+[TabGroup0]
+GroupSize=40
+SelectedTab=10
+[Window0]
+Filename=Workspace Dashboard
+ViewType=101
+Top=24
+Left=4
+Bottom=724
+Right=1400
+TabIndex=0
+TabGroup=0
+[Window1]
+Filename=C:\DataFlex Projects\TutorialWS\AppSrc\WebApp.src
+ViewType=1
+Top=24
+Left=4
+Bottom=724
+Right=1400
+CursorLine=27
+CursorColumn=62
+TabIndex=1
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\TutorialWS\AppSrc\ProductWebLookup.wo
+ViewType=1
+Top=24
+Left=4
+Bottom=724
+Right=1400
+CursorLine=19
+CursorColumn=78
+TabIndex=4
+TabGroup=0
+[Window3]
+Filename=C:\DataFlex Projects\TutorialWS\DDSrc\cOrderDataDictionary.dd
+ViewType=3
+Top=24
+Left=4
+Bottom=724
+Right=1400
+TabIndex=5
+TabGroup=0
+[Window4]
+Filename=C:\DataFlex Projects\TutorialWS\DDSrc\cPARAMDataDictionary.dd
+ViewType=3
+Top=24
+Left=4
+Bottom=724
+Right=1400
+TabIndex=3
+TabGroup=0
+[Window5]
+Filename=Product
+ViewType=4
+Top=24
+Left=4
+Bottom=724
+Right=1400
+TabIndex=8
+TabGroup=0
+[Window6]
+Filename=C:\DataFlex Projects\TutorialWS\DDSrc\cProductDataDictionary.dd
+ViewType=3
+Top=24
+Left=4
+Bottom=724
+Right=1400
+TabIndex=9
+TabGroup=0
+[Window7]
+Filename=C:\DataFlex Projects\TutorialWS\AppSrc\Product.wo
+ViewType=1
+Top=24
+Left=4
+Bottom=724
+Right=1400
+CursorLine=55
+CursorColumn=144
+TabIndex=2
+TabGroup=0
+[Window8]
+Filename=C:\DataFlex Projects\TutorialWS\AppSrc\Order.wo
+ViewType=1
+Top=24
+Left=4
+Bottom=724
+Right=1400
+CursorLine=113
+CursorColumn=43
+TabIndex=6
+TabGroup=0
+[Window9]
+Filename=C:\DataFlex Projects\TutorialWS\DDSrc\cOrder_DetailDataDictionary.dd
+ViewType=1
+Top=24
+Left=4
+Bottom=724
+Right=1400
+CursorLine=32
+CursorColumn=31
+TabIndex=7
+TabGroup=0
+[Window10]
+Filename=C:\DataFlex Projects\TutorialWS\AppSrc\OrderList.wo
+ViewType=1
+Top=24
+Left=4
+Bottom=724
+Right=1400
+CursorLine=33
+CursorColumn=21
+TabIndex=10
+TabGroup=0

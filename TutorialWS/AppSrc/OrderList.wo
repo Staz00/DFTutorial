@@ -1,0 +1,57 @@
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg 
+Use cOrderDataDictionary.dd
+Use cWebColumn.pkg
+
+Object oOrderList is a cWebView
+  Object oOrder_DD is a cOrderDataDictionary
+  End_Object
+
+  Set Main_DD to oOrder_DD
+  Set Server to oOrder_DD
+
+    Set piWidth to 700
+    Set psCaption to "OrderList"
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+        
+        Object oOrderGridList is a cWebGrid
+          Set piHeight to 500
+                             
+          // This procedure finds the records in the corresponding DD on the OnLoad event
+          // it gets fired as this object is loading into the view                             
+          Procedure OnLoad   
+            Send Find of oOrder_DD FIRST_RECORD 1
+          End_Procedure
+          
+          Object oOrder_OrderId is a cWebColumn
+            Entry_Item Order.OrderId
+              Set psCaption to "Order ID"
+              Set piWidth to 50
+          End_Object
+
+          Object oOrder_Customer is a cWebColumn
+            Entry_Item Order.Customer
+              Set psCaption to "Customer"
+              Set piWidth to 50
+          End_Object
+
+          Object oOrder_Price is a cWebColumn
+            Entry_Item Order.Price
+              Set psCaption to "Price"
+              Set piWidth to 50
+            Set pbEnabled to False
+          End_Object
+
+          Object oOrder_Date is a cWebColumnDate
+            Entry_Item Order.Date
+              Set psCaption to "Date"
+              Set piWidth to 50
+          End_Object
+        End_Object
+    End_Object 
+
+End_Object

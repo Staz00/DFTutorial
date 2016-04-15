@@ -1,0 +1,34 @@
+-----------------------------------------------------------------------------
+  DATE: 15/04/2016      TIME: 11:39                                  PAGE:  1
+  FILE DEFINITION FOR FILE: WebAppUser (# 264)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : DATAFLEX
+  FILE ROOT NAME            : WebAppUser
+  USER DISPLAY NAME         : WebApp User
+  DATAFLEX FILE NAME        : WebAppUser
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 102       ( USED: 74 )
+  MAX NUMBER OF RECORDS     : 10000     ( USED: 2 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : FILE
+  HEADER INTEGRITY CHECKING : YES
+  TRANSACTION TYPE          : CLIENT ATOMIC
+  RECORD IDENTITY INDEX     : 0 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : 
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  LoginName        ASC     20     1  1   
+  2  Password         ASC     20    21      
+  3  Rights           NUM    2.0    41      
+  4  FullName         ASC     30    42      
+  5  LastLogin        DAT      6    72      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    LoginName       NO  YES      20     3       1     ON-LINE
+

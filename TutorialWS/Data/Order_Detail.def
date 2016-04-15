@@ -1,0 +1,50 @@
+-----------------------------------------------------------------------------
+  DATE: 15/04/2016      TIME: 12:57                                  PAGE:  1
+  FILE DEFINITION FOR FILE: Order_Detail (# 4)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : DATAFLEX
+  FILE ROOT NAME            : Order_Detail
+  USER DISPLAY NAME         : Order_Detail
+  DATAFLEX FILE NAME        : Order_Detail
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 42        ( USED: 42 )
+  MAX NUMBER OF RECORDS     : 10000     ( USED: 2 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : FILE
+  HEADER INTEGRITY CHECKING : YES
+  TRANSACTION TYPE          : CLIENT ATOMIC
+  RECORD IDENTITY INDEX     : 0 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : 
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  Order_Detail_Id  NUM   14.0     1  1   
+  2  ProductId        NUM   14.0     8  2   Product.FIELD_1 (1,1)
+  3  Amount           NUM   14.0    15  3   
+  4  Total            NUM   14.0    22  4   
+  5  OrderId          NUM   14.0    29  5   Order.FIELD_1 (3,1)
+  6  UnitPrice        NUM   14.0    36  6   
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    Order_Detail_Id NO  NO       7      3       1     ON-LINE
+
+  2    ProductId       NO  NO       14     3       2     ON-LINE
+       Order_Detail_Id NO  NO 
+
+  3    Amount          NO  NO       14     3       2     ON-LINE
+       Order_Detail_Id NO  NO 
+
+  4    Total           NO  NO       14     3       2     ON-LINE
+       Order_Detail_Id NO  NO 
+
+  5    OrderId         NO  NO       14     3       2     ON-LINE
+       Order_Detail_Id NO  NO 
+
+  6    UnitPrice       NO  NO       14     3       2     ON-LINE
+       Order_Detail_Id NO  NO 
+

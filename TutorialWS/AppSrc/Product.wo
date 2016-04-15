@@ -1,0 +1,74 @@
+// C:\DataFlex Projects\TutorialWS\AppSrc\Product.wo
+// Product
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use cProductDataDictionary.dd
+
+Object oProduct is a cWebView
+  Set piColumnCount to 12
+  Set psCaption to "Product"
+  Set piWidth to 700
+  Set pbClearAfterSave to False
+
+  Object oProduct_DD is a cProductDataDictionary
+  End_Object 
+
+  Set Main_DD To oProduct_DD
+  Set Server  To oProduct_DD
+
+
+  Object oWebMainPanel is a cWebPanel
+    Set piColumnCount to 12
+
+//    Object oProductProductId is a cWebForm
+//      Entry_Item Product.ProductId
+//      Set piColumnSpan to 5
+//      Set piColumnIndex to 0
+//      Set psLabel to "ID:"
+//      Set peLabelAlign to alignLeft
+//    End_Object 
+
+    Object oProductNumber is a cWebForm
+      Entry_Item Product.Number
+      Set piColumnSpan to 12
+      Set piColumnIndex to 0
+      Set psLabel to "Product Number:"
+      Set peLabelAlign to alignLeft
+    End_Object 
+
+    Object oProductName is a cWebForm
+      Entry_Item Product.Name
+      Set piColumnSpan to 6
+      Set piColumnIndex to 0
+      Set psLabel to "Name:"
+      Set peLabelAlign to alignLeft
+    End_Object 
+
+    Object oProduct_Category is a cWebCombo
+      Entry_Item Product.Category
+        Set piColumnSpan to 6
+        Set psLabel to "Category:"
+      Set piColumnIndex to 6
+    End_Object
+
+    Object oProductEAN is a cWebForm
+      Entry_Item Product.EAN
+      Set piColumnSpan to 6
+      Set piColumnIndex to 0
+      Set psLabel to "EAN:"
+      Set peLabelAlign to alignLeft
+    End_Object 
+
+    Object oProduct_Price is a cWebForm
+      Entry_Item Product.Price
+        Set piColumnSpan to 6
+        Set psLabel to "Price:"
+      Set piColumnIndex to 6
+    End_Object
+  End_Object 
+
+End_Object 

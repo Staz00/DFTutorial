@@ -1,0 +1,89 @@
+// C:\DataFlex Projects\TutorialWS\AppSrc\ProductWebLookup.wo
+// Product Lookup List
+//
+
+Use cWebModalDialog
+Use cWebPanel.pkg
+Use cWebButton.pkg
+Use cWebPromptList.pkg
+Use cWebColumn.pkg
+
+Use cProductDataDictionary.dd
+
+Object oProductWebLookup is a cWebModalDialog
+  Set piColumnCount to 12
+  Set psCaption to "Product Lookup List"
+  Set piWidth to 700
+  Set piHeight to 400
+
+  Object oProduct_DD is a cProductDataDictionary
+  End_Object 
+
+  Set Main_DD To oProduct_DD
+  Set Server  To oProduct_DD
+
+
+  Object oWebMainPanel is a cWebPanel
+    Set piColumnCount to 12
+
+    Object oPromptList is a cWebPromptList
+      Set pbFillHeight to True
+      Set piColumnSpan to 12
+
+      Object oProductNumber is a cWebColumn
+        Entry_Item Product.Number
+        Set psCaption to "Product Number"
+        Set piWidth to 525
+      End_Object 
+
+      Object oProductName is a cWebColumn
+        Entry_Item Product.Name
+        Set psCaption to "Name"
+        Set piWidth to 525
+      End_Object 
+    End_Object 
+
+    Object oOkButton is a cWebButton
+      Set psCaption to "OK"
+      Set piColumnSpan to 2
+      Set piColumnIndex to 6
+
+      Procedure OnClick
+        Send Ok of oPromptList
+      End_Procedure
+
+    End_Object 
+
+    Object oCancelButton is a cWebButton
+      Set psCaption to "Cancel"
+      Set piColumnSpan to 2
+      Set piColumnIndex to 8
+      Procedure OnClick
+        Send Cancel of oPromptList
+      End_Procedure
+
+    End_Object 
+
+    Object oSearchButton is a cWebButton
+      Set psCaption to "Search..."
+      Set piColumnSpan to 2
+      Set piColumnIndex to 10
+
+      Procedure OnClick
+        Send Search of oPromptList
+      End_Procedure
+
+    End_Object 
+  End_Object 
+
+  Set pbServerOnShow to True
+  Procedure OnShow 
+    Send InitializePromptList of oPromptList
+  End_Procedure 
+
+  Set pbServerOnSubmit to True
+  Procedure OnSubmit 
+    Send Ok of oPromptList
+  End_Procedure 
+
+End_Object 

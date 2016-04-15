@@ -1,0 +1,8 @@
+#REPLACE FILE1 Product
+#REPLACE Product.Recnum |FN1,0
+#REPLACE Product.ProductId |FN1,1
+#REPLACE Product.Number |FS1,2
+#REPLACE Product.Name |FS1,3
+#REPLACE Product.EAN |FS1,4
+#REPLACE Product.Price |FN1,5
+#REPLACE Product.Category |FN1,6

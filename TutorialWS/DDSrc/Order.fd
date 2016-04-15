@@ -1,0 +1,8 @@
+#REPLACE FILE3 Order
+#REPLACE Order.Recnum |FN3,0
+#REPLACE Order.OrderId |FN3,1
+#REPLACE Order.Customer |FS3,2
+#REPLACE Order.Price |FN3,3
+#REPLACE Order.Date |FD3,4
+#REPLACE Order.Paid |FS3,5
+#REPLACE Order.Comment |FS3,6
