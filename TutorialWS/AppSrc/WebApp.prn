@@ -1,8 +1,8 @@
-Compiling Program: C:\DataFlex Projects\TutorialWS\AppSrc\WebApp.src
-Memory Available: 2147483647
+Compiling Program: C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\WebApp.src
+Memory Available: 906833919
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
-Including file: AllWebAppClasses.pkd    (C:\Program Files\DataFlex 18.2\Pkg\AllWebAppClasses.pkd)
+Including file: AllWebAppClasses.pkd    (C:\Program Files (x86)\DataFlex 18.2\Pkg\AllWebAppClasses.pkd)
 28717>Use cWebMenuItemLoadView.pkg
 28717>
 28717>Object oApplication is a cApplication
@@ -145,18 +145,18 @@ Including file: AllWebAppClasses.pkd    (C:\Program Files\DataFlex 18.2\Pkg\AllW
 28857>    End_Object
 28858>
 28858>    Use SessionManager.wo
-Including file: SessionManager.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\SessionManager.wo)
+Including file: SessionManager.wo    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\SessionManager.wo)
 28858>>>Use cWebSessionManagerStandard.pkg
-Including file: cWebSessionManagerStandard.pkg    (C:\Program Files\DataFlex 18.2\Pkg\cWebSessionManagerStandard.pkg)
+Including file: cWebSessionManagerStandard.pkg    (C:\Program Files (x86)\DataFlex 18.2\Pkg\cWebSessionManagerStandard.pkg)
 28858>>>>>Use cWebSessionManager.pkg
 28858>>>>>Use cWebAppSessionDataDictionary.dd
-Including file: cWebAppSessionDataDictionary.dd    (C:\Program Files\DataFlex 18.2\Pkg\cWebAppSessionDataDictionary.dd)
+Including file: cWebAppSessionDataDictionary.dd    (C:\Program Files (x86)\DataFlex 18.2\Pkg\cWebAppSessionDataDictionary.dd)
 28858>>>>>>>Use DataDict.pkg
 28858>>>>>>>
 28858>>>>>>>Open WebAppSession
-Including file: WebAppSession.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\WebAppSession.fd)
+Including file: WebAppSession.fd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\WebAppSession.fd)
 28860>>>>>>>Open WebAppUser
-Including file: WebAppUser.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\WebAppUser.fd)
+Including file: WebAppUser.fd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\WebAppUser.fd)
 28862>>>>>>>
 28862>>>>>>>Class cWebAppSessionDataDictionary is a DataDictionary
 28863>>>>>>>    
@@ -250,7 +250,7 @@ Including file: WebAppUser.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\WebAppUs
 28915>>>>>>>
 28915>>>>>>>End_Class
 28916>>>>>Use cWebAppUserDataDictionary.dd
-Including file: cWebAppUserDataDictionary.dd    (C:\Program Files\DataFlex 18.2\Pkg\cWebAppUserDataDictionary.dd)
+Including file: cWebAppUserDataDictionary.dd    (C:\Program Files (x86)\DataFlex 18.2\Pkg\cWebAppUserDataDictionary.dd)
 28916>>>>>>>Use DataDict.pkg
 28916>>>>>>>Open WebAppUser
 28918>>>>>>>Open WebAppSession
@@ -602,7 +602,7 @@ Including file: cWebAppUserDataDictionary.dd    (C:\Program Files\DataFlex 18.2\
 29124>>>End_Object
 29125>>>
 29125>    Use LoginDialog.wo
-Including file: LoginDialog.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\LoginDialog.wo)
+Including file: LoginDialog.wo    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\LoginDialog.wo)
 29125>>>Use cWebModalDialog.pkg
 29125>>>Use cWebForm.pkg
 29125>>>Use cWebButton.pkg
@@ -714,13 +714,13 @@ Including file: LoginDialog.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\LoginD
 29216>>>    End_Procedure
 29217>>>End_Object
 29218>    Use WebResourceManager.wo
-Including file: WebResourceManager.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\WebResourceManager.wo)
+Including file: WebResourceManager.wo    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\WebResourceManager.wo)
 29218>>>Use cWebResourceManager.pkg
 29218>>>
 29218>>>Object oWebResourceManager is a cWebResourceManager
 29220>>>End_Object
 29221>  Use Product.wo
-Including file: Product.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\Product.wo)
+Including file: Product.wo    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\Product.wo)
 29221>>>// C:\DataFlex Projects\TutorialWS\AppSrc\Product.wo
 29221>>>// Product
 29221>>>//
@@ -730,15 +730,15 @@ Including file: Product.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\Product.wo
 29221>>>Use cWebForm.pkg
 29221>>>
 29221>>>Use cProductDataDictionary.dd
-Including file: cProductDataDictionary.dd    (C:\DataFlex Projects\TutorialWS\DDSrc\cProductDataDictionary.dd)
+Including file: cProductDataDictionary.dd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\cProductDataDictionary.dd)
 29221>>>>>Use DataDict.pkg
 29221>>>>>
 29221>>>>>Open Product
-Including file: Product.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\Product.fd)
+Including file: Product.fd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\Product.fd)
 29223>>>>>Open PARAM
-Including file: PARAM.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\PARAM.fd)
+Including file: PARAM.fd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\PARAM.fd)
 29225>>>>>Open Order_Detail
-Including file: Order_Detail.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\Order_Detail.fd)
+Including file: Order_Detail.fd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\Order_Detail.fd)
 29227>>>>>
 29227>>>>>Object oCategoryVT is a CodeValidationTable
 29229>>>>>  Set Type_Value to "PRODCAT"
@@ -779,7 +779,7 @@ Including file: Order_Detail.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\Order_
 29252>>>>>End_Class
 29253>>>>>
 29253>>>>>Use ProductWebLookup.wo
-Including file: ProductWebLookup.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\ProductWebLookup.wo)
+Including file: ProductWebLookup.wo    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\ProductWebLookup.wo)
 29253>>>>>>>// C:\DataFlex Projects\TutorialWS\AppSrc\ProductWebLookup.wo
 29253>>>>>>>// Product Lookup List
 29253>>>>>>>//
@@ -935,7 +935,7 @@ Including file: ProductWebLookup.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\P
 29384>>>
 29384>>>End_Object 
 29385>  Use Order.wo
-Including file: Order.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\Order.wo)
+Including file: Order.wo    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\Order.wo)
 29385>>>// C:\DataFlex Projects\TutorialWS\AppSrc\Order.wo
 29385>>>// Order
 29385>>>//
@@ -952,11 +952,11 @@ Including file: Order.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\Order.wo)
 29385>>>
 29385>>>Use cProductDataDictionary.dd
 29385>>>Use cOrderDataDictionary.dd
-Including file: cOrderDataDictionary.dd    (C:\DataFlex Projects\TutorialWS\DDSrc\cOrderDataDictionary.dd)
+Including file: cOrderDataDictionary.dd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\cOrderDataDictionary.dd)
 29385>>>>>Use DataDict.pkg
 29385>>>>>
 29385>>>>>Open Order
-Including file: Order.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\Order.fd)
+Including file: Order.fd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\Order.fd)
 29387>>>>>Open PARAM
 29389>>>>>Open Order_Detail
 29391>>>>>
@@ -981,7 +981,7 @@ Including file: Order.fd    (C:\DataFlex Projects\TutorialWS\DDSrc\Order.fd)
 29405>>>>>
 29405>>>>>End_Class
 29406>>>Use cOrder_DetailDataDictionary.dd
-Including file: cOrder_DetailDataDictionary.dd    (C:\DataFlex Projects\TutorialWS\DDSrc\cOrder_DetailDataDictionary.dd)
+Including file: cOrder_DetailDataDictionary.dd    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\DDSrc\cOrder_DetailDataDictionary.dd)
 29406>>>>>Use DataDict.pkg
 29406>>>>>
 29406>>>>>Open Order_Detail
@@ -1039,7 +1039,7 @@ Including file: cOrder_DetailDataDictionary.dd    (C:\DataFlex Projects\Tutorial
 29449>>>>>End_Class
 29450>>>>>
 29450>>>>>Use Order_DetailWebLookup.wo
-Including file: Order_DetailWebLookup.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\Order_DetailWebLookup.wo)
+Including file: Order_DetailWebLookup.wo    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\Order_DetailWebLookup.wo)
 29450>>>>>>>// C:\DataFlex Projects\TutorialWS\AppSrc\Order_DetailWebLookup.wo
 29450>>>>>>>// Order_Detail Lookup List
 29450>>>>>>>//
@@ -1281,7 +1281,7 @@ Including file: Order_DetailWebLookup.wo    (C:\DataFlex Projects\TutorialWS\App
 29668>>>
 29668>>>End_Object 
 29669>  Use OrderList.wo
-Including file: OrderList.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\OrderList.wo)
+Including file: OrderList.wo    (C:\Users\Staz-PC\Documents\GitHub\DFTutorial\TutorialWS\AppSrc\OrderList.wo)
 29669>>>Use cWebView.pkg
 29669>>>Use cWebPanel.pkg
 29669>>>Use cWebForm.pkg 
@@ -1345,7 +1345,7 @@ Including file: OrderList.wo    (C:\DataFlex Projects\TutorialWS\AppSrc\OrderLis
 29718>Send StartWebApp of oWebApp
 29719>
 Summary
-Memory Available: 2147483647
+Memory Available: 905768959
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 20340
