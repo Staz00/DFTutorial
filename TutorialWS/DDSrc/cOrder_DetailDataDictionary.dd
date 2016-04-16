@@ -33,13 +33,19 @@ Class cOrder_DetailDataDictionary is a DataDictionary
     
     Procedure Update
       Forward Send Update
+      
+      //Could have a calculation here to get the old total minus the new total
+      //Order_Detail.Total - (oldTotal - newTotal) if oldTotal - newTotal's difference is negative, it would just add to the Order_Detail.Total
+      //otherwise, it would subtract it from the current total in the table
       Move (Order_Detail.Amount * Product.Price) to Order_Detail.Total
+      
       Send AdjustBalance Order_Detail.Total
     End_Procedure
 //    
     Procedure AdjustBalance Number nTotal
 //      Move 0 to Order.Price
       Add nTotal to Order.Price          //The reason we're just adding instead of clearing first is to calculate the total even for other items in the grid
+      
     End_Procedure
     
     Procedure AdjustDisplayTotal Integer iField String sValue
